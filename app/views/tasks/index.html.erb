@@ -1,0 +1,15 @@
+<h1>My tasks</h1>
+
+  <%= link_to "Add a task", new_path %>
+<ul>
+  <% @tasks.each do |task| %>
+    <%= link_to task_path(task.id) do %>
+      <p><input type="checkbox" name="restaurant[completed]"><%= task.title %></p>
+      <% end %>
+  <%= link_to "Edit a task", edit_path(task.id) %>
+  <%= link_to "Delete", destroy_path(task.id), method: :delete %>
+  <% end %>
+</ul>
+
+
+
